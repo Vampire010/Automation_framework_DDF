@@ -29,9 +29,9 @@ class Publish_template
     @driver.action.send_keys(:tab).perform
     @driver.action.send_keys(:tab).perform
     @driver.action.send_keys(:return).perform
-    sleep 5
 
   end
+=begin
 
   def publish_template
     @driver.find_element(xpath:'//*[@id="stack-action-btn-group"]/a[1]').click
@@ -42,6 +42,17 @@ class Publish_template
     alert.accept
     puts "Successfully lab template is published"
   end
+=end
+
+  def publish_template
+    @driver.find_element(xpath:'//*[@id="stack-action-btn-group"]/a[1]').click
+
+    @driver.find_element(css:'body > div.swal2-container.swal2-center.swal2-shown > div > div.swal2-actions > button.swal2-confirm.sweet-alert-button.btn.btn-primary').click
+    puts "Successfully lab template is published"
+    sleep 4
+  end
+
+
 end
 
 obj = Publish_template.new
@@ -49,4 +60,4 @@ obj.open_browser
 obj.sign_in
 obj.navigate_template
 obj.template_showpage
-#obj.publish_template
+obj.publish_template

@@ -1,5 +1,7 @@
 require 'selenium-webdriver'
 require 'roo'
+require_relative  '/Users/girishg/RubymineProjects/Ruby_Automation_Framework/Reporting/test_reports.rb'
+
 class KB_Login_Page
 
   def Login_TC01
@@ -17,10 +19,13 @@ class KB_Login_Page
     bank_Id.send_keys(banker_ID)
     bankers_Username.send_keys(usernae)
     bankers_UsrPassowrd.send_keys(usr_Password)
-    sleep 4
 
     login_Button.click
 
-    sleep 4
+    #rpot = Test_Reports.new
+    #rpot.report_Gen
+    $driver.quit
+
+
   end
 end
