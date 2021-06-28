@@ -4,9 +4,6 @@ require_relative '/Users/girishg/RubymineProjects/Ruby_Automation_Framework/Page
 class KbLogin_Test
 
 
-        Selenium::WebDriver.logger.output = 'selenium.json'
-        Selenium::WebDriver.logger.info('This is info message')
-        Selenium::WebDriver.logger.warn('This is warning message')
         br = Browser_Server.new
         br.Open_browser('chrome', 'http://mykidsbank.org/')
 
